@@ -17,7 +17,7 @@ const Form = () => {
     // Validation
     var regName = /^[a-zA-Z]+ [a-zA-Z]+$/
     if (!regName.test(name)) {
-      alert('Invalid name given.')
+      return alert('Invalid name given.')
     }
     try {
       await saveDetails(
