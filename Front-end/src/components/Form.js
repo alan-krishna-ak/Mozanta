@@ -15,7 +15,8 @@ const Form = () => {
       return alert('Please enter all the fields')
     }
     // Validation
-    var regName = /^[^\s].*[^\s]$/
+    var regName = /^[^\s].*[^\s]$/ //regex
+    
 
     if (!regName.test(name.value)) {
       return alert('Invalid name given.')
