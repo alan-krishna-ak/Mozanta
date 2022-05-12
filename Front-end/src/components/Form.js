@@ -14,6 +14,11 @@ const Form = () => {
     ) {
       return alert('Please enter all the fields')
     }
+    // Validation
+    var regName = /^[a-zA-Z]+ [a-zA-Z]+$/
+    if (!regName.test(name)) {
+      alert('Invalid name given.')
+    }
     try {
       await saveDetails(
         name.value,

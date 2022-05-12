@@ -45,7 +45,7 @@ public class RegistrationService {
 
 	public String save(Student student) {
 
-		Integer num;
+		
 		repo.save(student);
 		return "saved";
 
@@ -61,7 +61,6 @@ public class RegistrationService {
 	public void deletename(String name) {
 		// TODO Auto-generated method stub
 		Query query = new Query(Criteria.where("name").is(name));
-		System.out.println(query.toString());
 		mongoOperations.findAllAndRemove(query, Student.class, "student");
 
 	}

@@ -39,12 +39,6 @@ public class RegistrationController {
 	public List<Student> getAllStudents() {
 		return service.findAll();
 	}
-// deleting data
-	@DeleteMapping("/delete/{name}")
-	public String deletestudent(@PathVariable String name) {
-		service.deletename(name);
-		return "success";
 
-	}
 
 }
