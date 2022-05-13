@@ -37,32 +37,17 @@ public class RegistrationService {
 		// modify in the document
 		IdSequence counter = mongoOperations.findAndModify(query, update, options().returnNew(true).upsert(true),
 				IdSequence.class);
-		System.out.println(counter);
-
 		return !Objects.isNull(counter) ? counter.getIdSequence() : 1;
-
 	}
 
 	public String save(Student student) {
-
-		
 		repo.save(student);
 		return "saved";
-
 	}
 
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
-
 		List<Student> s = mongoOperations.findAll(Student.class);
 		return s;
-	}
-// deleting on basis of name
-	public void deletename(String name) {
-		// TODO Auto-generated method stub
-		Query query = new Query(Criteria.where("name").is(name));
-		mongoOperations.findAllAndRemove(query, Student.class, "student");
-
 	}
 
 }

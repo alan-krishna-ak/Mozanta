@@ -27,9 +27,9 @@ public class RegistrationController {
 
 	@PostMapping("/save")
 	public String save(@RequestBody Student student) {
+		
 		// generate sequence
 		Integer i = service.getSequenceNumber(Student.SEQUENCE_NAME);
-
 		String str = String.format("%03d", i); // triple digit format
 		student.setAdNumber("R-" + str); // Appending
 		return service.save(student);
