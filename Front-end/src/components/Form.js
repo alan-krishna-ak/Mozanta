@@ -15,7 +15,18 @@ const Form = () => {
       return alert('Please enter all the fields')
     }
     // Validation
-    var regName = /^[^\s].*[^\s]$/ //regex
+    var regName = /[a-zA-Z_]+.*$/ //regex
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/
+
+    if (
+      format.test(name.value) ||
+      /\d/.test(name.value) ||
+      name.value[0] === ' ' ||
+      !regName.test(name.value)
+    ) {
+      return alert('Invalid name given.')
+    }
+    
     
 
     if (!regName.test(name.value)) {
